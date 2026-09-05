@@ -1,0 +1,256 @@
+/**
+ * SUBHASHISH PORTFOLIO DESIGN SYSTEM TOKENS
+ * Philosophy: Dark Cinematic Dragon-Warrior + Modern Engineering Editorial
+ * Status: Phase 1 — Refined v1.1
+ *
+ * Revision notes:
+ * - Sharper corner radii: surfaces use xs/sm, only pill navigation uses full
+ * - Background layers carry directional depth (top cool-light, body warm-dark)
+ * - Accent palette narrowed: blue is atmospheric, violet is a single reserved power accent
+ * - Removed cyan neon saturation; accents are tonal, not neon
+ * - Surface opacity lifted from 0.72 to solid/near-solid for premium weight
+ */
+
+:root {
+  /* ==========================================================================
+     1. COLOR SYSTEM: Backgrounds & Layers
+     Directional narrative: cold atmospheric blue at the top, deep indigo-obsidian below.
+     ========================================================================== */
+  --color-bg-base:       #06070c;    /* True obsidian canvas — deepest possible dark */
+  --color-bg-subtle:     #090d18;    /* Directional depth shift — barely perceptible warm indigo */
+  --color-bg-secondary:  #0c1121;    /* Structural section backing */
+  --color-bg-tertiary:   #111827;    /* Raised container backing — rich dark navy */
+  --color-bg-elevated:   #182035;    /* Highest z-level: dropdowns, modals */
+
+  /*
+   * Atmospheric backdrop — NOT decorative noise.
+   * A single directional cold light source from top-center, bleeding to void.
+   * Used only as fixed body::before — not repeated on cards.
+   */
+  --gradient-ambient-top: radial-gradient(
+    ellipse 80% 50% at 50% -10%,
+    rgba(30, 100, 180, 0.11) 0%,
+    rgba(15, 30, 70, 0.06) 45%,
+    transparent 70%
+  );
+
+  /*
+   * Subtle secondary warmth — lower-left cool indigo pool (dragon's shadow).
+   * Applied selectively on hero/canvas, never repeated per-card.
+   */
+  --gradient-ambient-depth: radial-gradient(
+    ellipse 60% 40% at 10% 90%,
+    rgba(80, 40, 160, 0.07) 0%,
+    transparent 60%
+  );
+
+  /*
+   * Accent rule lines — single-use horizontal separators only.
+   * Narrow, directional, not scattered everywhere.
+   */
+  --gradient-rule-blue: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(40, 120, 200, 0.5) 40%,
+    rgba(100, 60, 220, 0.35) 70%,
+    transparent 100%
+  );
+
+  /* ==========================================================================
+     2. COLOR SYSTEM: Text
+     ========================================================================== */
+  --color-text-primary:   #eef2f7;   /* Near-white — high contrast on obsidian (>14:1) */
+  --color-text-secondary: #c2cedf;   /* Body readable — slightly cooler than before */
+  --color-text-muted:     #8898b0;   /* Descriptions, timestamps */
+  --color-text-faint:     #4f627d;   /* Minor chrome: dividers, index numbers */
+  --color-text-inverse:   #06070c;   /* Text on filled accent buttons */
+
+  /* ==========================================================================
+     3. COLOR SYSTEM: Accents
+     Two accents. No rainbow. Strict discipline.
+     ========================================================================== */
+
+  /* — Blue: Atmospheric primary, light source, engineering precision — */
+  --color-accent-blue:         #5badec;   /* De-saturated from cyan toward sky — less neon */
+  --color-accent-blue-dim:     #3a7dc4;   /* Deeper tonal variant for borders/states */
+  --color-accent-blue-hover:   #7ec8f8;   /* Lighter hover — atmospheric brightening */
+  --color-accent-blue-subtle:  rgba(91, 173, 236, 0.10);
+  --color-accent-blue-ghost:   rgba(91, 173, 236, 0.05);
+
+  /* — Violet: Dragon power accent — used sparingly, never as a background wash — */
+  --color-accent-violet:       #8b5cf6;   /* Rich but not neon — darkened from #a855f7 */
+  --color-accent-violet-dim:   #6d40c4;
+  --color-accent-violet-hover: #a680fa;
+  --color-accent-violet-subtle: rgba(139, 92, 246, 0.10);
+
+  /* — Status — */
+  --color-success:         #22c55e;
+  --color-success-subtle:  rgba(34, 197, 94, 0.12);
+  --color-warning:         #eab308;
+  --color-warning-subtle:  rgba(234, 179, 8, 0.12);
+  --color-error:           #f43f5e;
+  --color-error-subtle:    rgba(244, 63, 94, 0.12);
+
+  /* ==========================================================================
+     4. SURFACE SYSTEM
+     Philosophy: Solid-first. Heavy, weighted obsidian surfaces.
+     Glass is an exception reserved for floating navigation and select overlays.
+     ========================================================================== */
+  --surface-solid:       #0c1121;             /* Opaque structural surface — no transparency */
+  --surface-raised:      #111827;             /* Card elevation layer — rich, near-solid */
+  --surface-elevated:    #182035;             /* Modal / highest floating layer */
+  --surface-inset:       #090c18;             /* Recessed / indented interior fields */
+
+  --surface-glass:       rgba(10, 15, 30, 0.6);   /* Selective morphic — nav only */
+  --surface-glass-filter: blur(16px) saturate(140%);
+
+  --surface-interactive:       rgba(255, 255, 255, 0.025);
+  --surface-interactive-hover: rgba(255, 255, 255, 0.05);
+
+  /* ==========================================================================
+     5. BORDERS
+     Sharp, dimensional edge language — not soft glows.
+     ========================================================================== */
+  --border-hairline:  rgba(255, 255, 255, 0.04);  /* Structural separation, barely visible */
+  --border-subtle:    rgba(255, 255, 255, 0.08);  /* Default card/field border */
+  --border-default:   rgba(255, 255, 255, 0.13);  /* Resting state — visible but not loud */
+  --border-hover:     rgba(91, 173, 236, 0.40);   /* Interactive — blue atmospheric edge */
+  --border-accent:    rgba(139, 92, 246, 0.50);   /* Dragon highlight edge */
+  --border-active:    rgba(91, 173, 236, 0.85);
+  --border-error:     rgba(244, 63, 94, 0.55);
+
+  /* Top-lit surface edge — single-pixel highlight at top of elevated surfaces */
+  --border-top-light: rgba(255, 255, 255, 0.12);
+
+  /* ==========================================================================
+     6. SHADOWS & ATMOSPHERIC GLOWS
+     Directional shadows: consistent light from top. Glows: restrained, diffused.
+     ========================================================================== */
+  --shadow-xs:       0 1px 4px 0 rgba(0, 0, 0, 0.45);
+  --shadow-sm:       0 2px 10px -2px rgba(0, 0, 0, 0.6);
+  --shadow-md:       0 8px 28px -4px rgba(0, 0, 0, 0.7);
+  --shadow-lg:       0 20px 56px -8px rgba(0, 0, 0, 0.8);
+  --shadow-elevated: 0 28px 72px -10px rgba(0, 0, 0, 0.9);
+
+  /* Glows: diffused, not neon rings */
+  --glow-blue-xs:     0 0 12px -4px rgba(91, 173, 236, 0.20);
+  --glow-blue-sm:     0 0 24px -4px rgba(91, 173, 236, 0.22);
+  --glow-blue-md:     0 0 44px -6px rgba(91, 173, 236, 0.26);
+  --glow-violet-xs:   0 0 12px -4px rgba(139, 92, 246, 0.18);
+  --glow-violet-sm:   0 0 26px -4px rgba(139, 92, 246, 0.22);
+  --glow-violet-md:   0 0 48px -8px rgba(139, 92, 246, 0.28);
+
+  /* Inset top-rim — gives surfaces depth and weight */
+  --glow-rim-top: inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+
+  /* ==========================================================================
+     7. SPACING
+     ========================================================================== */
+  --space-1:  0.25rem;    /*  4px */
+  --space-2:  0.5rem;     /*  8px */
+  --space-3:  0.75rem;    /* 12px */
+  --space-4:  1rem;       /* 16px */
+  --space-5:  1.25rem;    /* 20px */
+  --space-6:  1.5rem;     /* 24px */
+  --space-8:  2rem;       /* 32px */
+  --space-10: 2.5rem;     /* 40px */
+  --space-12: 3rem;       /* 48px */
+  --space-16: 4rem;       /* 64px */
+  --space-20: 5rem;       /* 80px */
+  --space-24: 6rem;       /* 96px */
+  --space-32: 8rem;       /* 128px */
+
+  /* ==========================================================================
+     8. TYPOGRAPHY
+     ========================================================================== */
+  --font-display: 'Syne', sans-serif;          /* Editorial impact — headings only */
+  --font-sans:    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Sizes */
+  --text-xs:      0.6875rem;   /* 11px — metadata */
+  --text-sm:      0.8125rem;   /* 13px — UI labels */
+  --text-base:    1rem;        /* 16px — body */
+  --text-lg:      1.125rem;    /* 18px — body large */
+  --text-xl:      1.25rem;     /* 20px — subheading */
+  --text-2xl:     1.5rem;      /* 24px — section intro */
+  --text-3xl:     1.875rem;    /* 30px — section heading */
+  --text-4xl:     2.5rem;      /* 40px — page heading */
+  --text-display: clamp(2.75rem, 5vw + 0.75rem, 4.5rem); /* Hero — more dramatic range */
+
+  /* Line heights */
+  --leading-tight:   1.1;     /* Display headings */
+  --leading-snug:    1.2;     /* Section headings */
+  --leading-normal:  1.55;    /* Body */
+  --leading-relaxed: 1.72;    /* Long-form prose */
+
+  /* Letter spacing */
+  --tracking-tight:   -0.025em;
+  --tracking-snug:    -0.012em;
+  --tracking-normal:   0em;
+  --tracking-wide:     0.04em;
+  --tracking-eyebrow:  0.16em;  /* Monospace eyebrow labels */
+
+  /* Weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    800;
+
+  /* ==========================================================================
+     9. CORNER RADII
+     Editorial: sharp for surfaces, reserved full-pill for navigation only.
+     ========================================================================== */
+  --radius-none: 0px;
+  --radius-xs:   2px;    /* Minimal — code tags, hairline chips */
+  --radius-sm:   5px;    /* Default card, field border */
+  --radius-md:   8px;    /* Buttons, elevated panels */
+  --radius-lg:   12px;   /* Section containers, large panels */
+  --radius-full: 9999px; /* Pill navigation, badge chips ONLY */
+
+  /* ==========================================================================
+     10. MOTION
+     ========================================================================== */
+  --duration-instant:   80ms;
+  --duration-fast:      160ms;
+  --duration-base:      260ms;
+  --duration-smooth:    420ms;
+  --duration-cinematic: 700ms;
+
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.25, 0.64, 1);
+
+  --motion-lift-y:     -2px;   /* Reduced: subtle, not bouncy */
+  --motion-scale-hover: 1.012;
+
+  /* ==========================================================================
+     11. LAYOUT & CONTAINERS
+     ========================================================================== */
+  --container-max:    1200px;
+  --container-narrow: 820px;
+  --gutter-mobile:    1.25rem;
+  --gutter-tablet:    2rem;
+  --gutter-desktop:   2.5rem;
+
+  /* ==========================================================================
+     12. FOCUS & ACCESSIBILITY
+     ========================================================================== */
+  --focus-ring: 0 0 0 2px var(--color-bg-base), 0 0 0 4px var(--color-accent-blue-dim);
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant:   0.01ms;
+    --duration-fast:      0.01ms;
+    --duration-base:      0.01ms;
+    --duration-smooth:    0.01ms;
+    --duration-cinematic: 0.01ms;
+    --motion-lift-y:      0px;
+    --motion-scale-hover: 1;
+  }
+}
