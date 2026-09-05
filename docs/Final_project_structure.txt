@@ -1,0 +1,45 @@
+subhashish-portfolio/
+│
+├── AGENTS.md
+├── README.md
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+│
+├── docs/
+│   ├── PRD.md
+│   ├── DESIGN.md
+│   ├── ARCHITECTURE.md
+│   ├── DEVELOPMENT_PLAN.md
+│   ├── CONTENT.md
+│   ├── AI_SPEC.md
+│   ├── DECISIONS.md
+│   ├── QA.md
+│   ├── SECURITY.md
+│   └── PHASE_TRACKER.md
+│
+├── public/
+│   ├── favicon/
+│   ├── images/
+│   ├── audio/
+│   └── models/
+│
+├── src/
+│   ├── components/
+│   ├── sections/
+│   ├── animations/
+│   ├── hooks/
+│   ├── lib/
+│   ├── services/
+│   ├── styles/
+│   ├── types/
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── api/
+│   ├── chat.ts
+│   ├── tts.ts
+│   ├── contact.ts
+│   └── _lib/
+│
+└── tests/
