@@ -81,18 +81,17 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: Avatar placeholder */}
+        {/* Right: Portrait */}
         <div
           className="hero-avatar motion-reveal motion-scale-fade"
           data-motion-reveal="scale-fade"
           data-parallax="hero-avatar"
-          role="img"
-          aria-label="Subhashish Budati — portrait placeholder, photo coming soon"
         >
-          <span className="hero-avatar-initials" aria-hidden="true">SB</span>
-          <span className="hero-avatar-placeholder-note" aria-hidden="true">
-            PHOTO_PENDING
-          </span>
+          <img
+            className="hero-avatar-image"
+            src="/hero/portrait/subhashish-hero.png"
+            alt="Portrait of Subhashish Budati"
+          />
         </div>
       </div>
 
