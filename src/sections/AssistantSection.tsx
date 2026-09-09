@@ -31,7 +31,7 @@ export const AssistantSection: React.FC = () => {
       aria-labelledby="assistant-heading"
     >
       {/* Section header */}
-      <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
+      <div className="motion-reveal" data-motion-reveal="fade-up" style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
         <div
           className="section-label"
           style={{ justifyContent: 'center', marginBottom: 'var(--space-3)' }}
@@ -55,7 +55,7 @@ export const AssistantSection: React.FC = () => {
       </div>
 
       {/* Placeholder panel */}
-      <div className="assistant-container">
+      <div className="assistant-container motion-reveal" data-motion-reveal="fade-up">
         <div
           className="assistant-panel"
           aria-label="AI assistant preview — not yet active"

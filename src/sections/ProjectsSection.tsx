@@ -74,7 +74,7 @@ export const ProjectsSection: React.FC = () => {
       aria-labelledby="projects-heading"
     >
       {/* Section header */}
-      <div style={{ marginBottom: 'var(--space-12)' }}>
+      <div className="motion-reveal" data-motion-reveal="fade-up" style={{ marginBottom: 'var(--space-12)' }}>
         <div className="section-label">
           <span className="type-eyebrow">Selected Work</span>
         </div>
@@ -92,6 +92,8 @@ export const ProjectsSection: React.FC = () => {
 
       {/* Note on placeholder links */}
       <div
+        className="motion-reveal motion-fade-in"
+        data-motion-reveal="fade-in"
         style={{
           marginBottom: 'var(--space-8)',
           padding: 'var(--space-3) var(--space-4)',
@@ -121,7 +123,7 @@ export const ProjectsSection: React.FC = () => {
       </div>
 
       {/* Project list */}
-      <div className="projects-list">
+      <div className="projects-list motion-reveal" data-motion-reveal="fade-up">
         {PROJECTS.map(project => (
           <ProjectCard key={project.id} project={project} />
         ))}

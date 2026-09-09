@@ -29,7 +29,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <article
-      className={`project-card${featured ? ' featured' : ''}`}
+      className={`project-card motion-reveal${featured ? ' featured' : ''}`}
+      data-motion-reveal="fade-up"
       aria-label={`Project: ${title}`}
     >
       {/* Header row */}

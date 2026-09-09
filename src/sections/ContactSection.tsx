@@ -22,7 +22,7 @@ export const ContactSection: React.FC = () => {
       aria-labelledby="contact-heading"
     >
       <div className="contact-grid">
-        <div>
+        <div className="motion-reveal" data-motion-reveal="fade-up">
           <div className="section-label">
             <span className="type-eyebrow">Let&apos;s Connect</span>
           </div>
@@ -51,7 +51,7 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="contact-form-card">
+        <div className="contact-form-card motion-reveal motion-scale-fade" data-motion-reveal="scale-fade">
           {status === 'success' ? (
             <div className="contact-success" role="status" aria-live="polite">
               <div className="contact-success-icon" aria-hidden="true">✓</div>

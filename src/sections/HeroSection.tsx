@@ -38,14 +38,14 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Display heading */}
-          <h1 className="hero-display" id="hero-heading">
+          <h1 className="hero-display motion-reveal" data-motion-reveal="fade-up" id="hero-heading">
             Hey amigos —<br />
             I&apos;m{' '}
             <span className="hero-name-accent">Subhashish.</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-subtitle">
+          <p className="hero-subtitle motion-reveal" data-motion-reveal="fade-up">
             You can call me{' '}
             <strong style={{ color: 'var(--color-text-primary)' }}>Subu</strong>{' '}
             or{' '}
@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
           </p>
 
           {/* CTAs */}
-          <div className="hero-cta-row">
+          <div className="hero-cta-row motion-reveal" data-motion-reveal="fade-up">
             <Button
               variant="primary"
               size="lg"
@@ -78,7 +78,8 @@ export const HeroSection: React.FC = () => {
 
         {/* Right: Avatar placeholder */}
         <div
-          className="hero-avatar"
+          className="hero-avatar motion-reveal motion-scale-fade"
+          data-motion-reveal="scale-fade"
           role="img"
           aria-label="Subhashish Budati — portrait placeholder, photo coming soon"
         >
@@ -90,7 +91,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="hero-scroll-hint" aria-hidden="true">
+      <div className="hero-scroll-hint motion-reveal motion-fade-in" data-motion-reveal="fade-in" aria-hidden="true">
         <div className="hero-scroll-line" />
         <span>SCROLL</span>
       </div>

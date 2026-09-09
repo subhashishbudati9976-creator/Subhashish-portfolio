@@ -9,8 +9,11 @@ import { HeroSection } from './sections/HeroSection';
 import { MindsetSection } from './sections/MindsetSection';
 import { ProjectsSection } from './sections/ProjectsSection';
 import { SkillsSection } from './sections/SkillsSection';
+import { useRevealObserver } from './hooks/useRevealObserver';
 
 export const App: React.FC = () => {
+  useRevealObserver();
+
   return (
     <div className="portfolio-app">
       <Nav />

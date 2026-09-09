@@ -40,7 +40,7 @@ export const MindsetSection: React.FC = () => {
     >
       <div className="mindset-grid">
         {/* Left: intro */}
-        <div>
+        <div className="motion-reveal" data-motion-reveal="fade-up">
           <div className="section-label" style={{ marginBottom: 'var(--space-3)' }}>
             <span className="type-eyebrow">Engineering Mindset</span>
           </div>
@@ -64,11 +64,13 @@ export const MindsetSection: React.FC = () => {
         </div>
 
         {/* Right: principles */}
-        <div className="mindset-principles" role="list">
-          {PRINCIPLES.map(principle => (
+        <div className="mindset-principles motion-stagger motion-reveal" data-motion-reveal="fade-up" role="list">
+          {PRINCIPLES.map((principle, index) => (
             <div
               key={principle.id}
               className="mindset-principle"
+              data-motion-reveal-item
+              style={{ '--motion-reveal-index': index } as React.CSSProperties}
               role="listitem"
             >
               <h3 className="mindset-principle-title">{principle.title}</h3>

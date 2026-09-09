@@ -58,7 +58,7 @@ export const ExperienceSection: React.FC = () => {
       aria-labelledby="experience-heading"
     >
       {/* Section header */}
-      <div style={{ marginBottom: 'var(--space-12)' }}>
+      <div className="motion-reveal" data-motion-reveal="fade-up" style={{ marginBottom: 'var(--space-12)' }}>
         <div className="section-label">
           <span className="type-eyebrow">Experience</span>
         </div>
@@ -77,7 +77,7 @@ export const ExperienceSection: React.FC = () => {
               item.type === 'Education' ? 'violet' : '';
 
             return (
-              <li key={item.id} className="timeline-item">
+              <li key={item.id} className="timeline-item motion-reveal" data-motion-reveal="fade-up">
                 <div
                   className={`timeline-dot${dotVariant ? ` ${dotVariant}` : ''}`}
                   aria-hidden="true"

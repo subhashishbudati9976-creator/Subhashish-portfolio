@@ -357,6 +357,73 @@
   margin-bottom: var(--space-6);
 }
 
+/* ===========================================================================
+   Motion Foundation — shared observer-driven reveals
+   =========================================================================== */
+
+.motion-reveal {
+  --motion-reveal-delay: 0ms;
+}
+
+.motion-ready .motion-reveal {
+  opacity: 0;
+  transform: translateY(var(--motion-reveal-distance));
+  transition:
+    opacity var(--motion-reveal-duration) var(--ease-out) var(--motion-reveal-delay),
+    transform var(--motion-reveal-duration) var(--ease-out) var(--motion-reveal-delay);
+}
+
+.motion-ready .motion-reveal.motion-fade-in {
+  transform: none;
+}
+
+.motion-ready .motion-reveal.motion-scale-fade {
+  transform: scale(0.985);
+}
+
+.motion-ready .motion-reveal.motion-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.motion-ready .motion-stagger.motion-visible > [data-motion-reveal-item] {
+  opacity: 1;
+  transform: none;
+}
+
+.motion-ready .motion-stagger.motion-visible > [data-motion-reveal-item] {
+  transition-delay: calc(var(--motion-reveal-index, 0) * var(--motion-reveal-stagger));
+}
+
+.motion-ready .motion-stagger > [data-motion-reveal-item] {
+  opacity: 0;
+  transform: translateY(var(--motion-reveal-distance));
+  transition:
+    opacity var(--motion-reveal-duration) var(--ease-out),
+    transform var(--motion-reveal-duration) var(--ease-out);
+}
+
+@media (max-width: 768px) {
+  .motion-ready .motion-reveal,
+  .motion-ready .motion-stagger > [data-motion-reveal-item] {
+    transform: translateY(10px);
+  }
+
+  .motion-ready .motion-reveal.motion-scale-fade {
+    transform: scale(0.99);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready .motion-reveal,
+  .motion-ready .motion-stagger > [data-motion-reveal-item],
+  .motion-ready .motion-reveal.motion-scale-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @media (max-width: 768px) {
   .section-title {
     font-size: var(--text-3xl);

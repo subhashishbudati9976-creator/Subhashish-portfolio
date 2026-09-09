@@ -85,7 +85,7 @@ export const SkillsSection: React.FC = () => {
       aria-labelledby="skills-heading"
     >
       {/* Section header */}
-      <div style={{ marginBottom: 'var(--space-12)' }}>
+      <div className="motion-reveal" data-motion-reveal="fade-up" style={{ marginBottom: 'var(--space-12)' }}>
         <div className="section-label">
           <span className="type-eyebrow">Skills</span>
         </div>
@@ -102,7 +102,7 @@ export const SkillsSection: React.FC = () => {
       </div>
 
       {/* Primary skills grid */}
-      <div className="skills-grid" style={{ marginBottom: 'var(--space-10)' }}>
+      <div className="skills-grid motion-reveal" data-motion-reveal="fade-up" style={{ marginBottom: 'var(--space-10)' }}>
         {PRIMARY_CATEGORIES.map(category => (
           <div key={category.id} className="surface-card">
             <h3 className="skills-category-title">{category.label}</h3>
@@ -121,7 +121,7 @@ export const SkillsSection: React.FC = () => {
       </div>
 
       {/* Academic foundations — presented separately */}
-      <div>
+      <div className="motion-reveal" data-motion-reveal="fade-up">
         {FOUNDATION_SKILLS.map(category => (
           <div key={category.id}>
             <h3

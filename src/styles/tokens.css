@@ -224,6 +224,9 @@
 
   --motion-lift-y:     -2px;   /* Reduced: subtle, not bouncy */
   --motion-scale-hover: 1.012;
+   --motion-reveal-distance: 18px;
+   --motion-reveal-duration: 620ms;
+   --motion-reveal-stagger: 90ms;
 
   /* ==========================================================================
      11. LAYOUT & CONTAINERS
@@ -252,5 +255,8 @@
     --duration-cinematic: 0.01ms;
     --motion-lift-y:      0px;
     --motion-scale-hover: 1;
+      --motion-reveal-distance: 0px;
+      --motion-reveal-duration: 0.01ms;
+      --motion-reveal-stagger: 0ms;
   }
 }

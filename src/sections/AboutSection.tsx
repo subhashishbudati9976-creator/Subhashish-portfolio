@@ -35,7 +35,7 @@ export const AboutSection: React.FC = () => {
       aria-labelledby="about-heading"
     >
       {/* Section header */}
-      <div style={{ marginBottom: 'var(--space-12)' }}>
+      <div className="motion-reveal" data-motion-reveal="fade-up" style={{ marginBottom: 'var(--space-12)' }}>
         <div className="section-label">
           <span className="type-eyebrow">About</span>
         </div>
@@ -44,7 +44,7 @@ export const AboutSection: React.FC = () => {
         </h2>
       </div>
 
-      <div className="about-grid">
+      <div className="about-grid motion-reveal" data-motion-reveal="fade-up">
         {/* Left: Bio */}
         <div>
           <p className="about-bio-paragraph">
