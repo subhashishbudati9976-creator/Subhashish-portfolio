@@ -21,7 +21,7 @@ export const SurfaceGallery: React.FC = () => {
           </div>
           <h3 className="type-heading-4" style={{ marginBottom: 'var(--space-2)' }}>Structural Card</h3>
           <p className="type-body-sm" style={{ marginBottom: 'var(--space-4)' }}>
-            Default surface for project cards, repository overviews, and content sections. Sharp radius-sm, top-lit rim, 1px border.
+            Default surface for data cards, technical summaries, and modular containers. Sharp radius-sm, top-lit rim, 1px border.
           </p>
           <div
             style={{
@@ -86,7 +86,7 @@ export const SurfaceGallery: React.FC = () => {
           </div>
           <h3 className="type-heading-4" style={{ marginBottom: 'var(--space-2)' }}>Violet Power Glow</h3>
           <p className="type-body-sm" style={{ marginBottom: 'var(--space-4)' }}>
-            Applied only to ONE featured item per context — highlighted project, hero panel milestone. Never as a repeating pattern.
+            Applied only to ONE featured item per context — highlighted metric or milestone container. Never as a repeating pattern.
           </p>
           <div
             style={{
@@ -111,11 +111,11 @@ export const SurfaceGallery: React.FC = () => {
           Glassmorphism is a reserved treatment for the floating navigation bar exclusively. It appears pill-shaped, centered, floating above the canvas.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <nav className="surface-glass" aria-label="Navigation preview">
-            <a className="nav-link type-nav active" href="#">Work</a>
-            <a className="nav-link type-nav" href="#">About</a>
-            <a className="nav-link type-nav" href="#">Skills</a>
-            <a className="nav-link type-nav" href="#">Contact</a>
+          <nav className="surface-glass" aria-label="Navigation specimen">
+            <a className="nav-link type-nav active" href="#specimen-1" onClick={(e) => e.preventDefault()}>Specimen 01</a>
+            <a className="nav-link type-nav" href="#specimen-2" onClick={(e) => e.preventDefault()}>Specimen 02</a>
+            <a className="nav-link type-nav" href="#specimen-3" onClick={(e) => e.preventDefault()}>Specimen 03</a>
+            <a className="nav-link type-nav" href="#specimen-4" onClick={(e) => e.preventDefault()}>Specimen 04</a>
           </nav>
         </div>
         <p className="type-body-sm" style={{ marginTop: 'var(--space-4)', textAlign: 'center', color: 'var(--color-text-faint)' }}>

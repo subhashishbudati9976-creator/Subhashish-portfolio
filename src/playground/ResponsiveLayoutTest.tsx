@@ -62,7 +62,7 @@ export const ResponsiveLayoutTest: React.FC = () => {
               Primary Narrative Container
             </h4>
             <p className="type-body">
-              Designed for featured project deep-dives, architectural diagrams, and code snippets. Provides spacious reading width while maintaining strict line-length bounds.
+              Designed for technical documentation, architectural diagrams, and code displays. Provides spacious reading width while maintaining strict line-length bounds.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export const ResponsiveLayoutTest: React.FC = () => {
         </div>
 
         <div className="grid-auto-fit">
-          {['Python & Systems', 'Docker & CI/CD', 'Relational DBMS', 'Gemini AI Pipelines'].map((title, idx) => (
+          {['Content Module Alpha', 'Content Module Beta', 'Content Module Gamma', 'Content Module Delta'].map((title, idx) => (
             <div
               key={idx}
               className="surface-card"

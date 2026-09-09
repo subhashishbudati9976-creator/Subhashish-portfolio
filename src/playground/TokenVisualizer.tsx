@@ -182,22 +182,22 @@ export const TokenVisualizer: React.FC = () => {
 
           <div>
             <div className="type-eyebrow" style={{ marginBottom: 'var(--space-2)' }}>Heading 1 (Syne 700 / 36px)</div>
-            <h1 className="type-heading-1">Systems, Code &amp; Next-Gen Intelligence</h1>
+            <h1 className="type-heading-1">Editorial Typography &amp; Scale Specimen</h1>
           </div>
 
           <div>
             <div className="type-eyebrow" style={{ marginBottom: 'var(--space-2)' }}>Heading 2 (Syne 700 / 30px)</div>
-            <h2 className="type-heading-2">Crafted Foundations Built For Scale</h2>
+            <h2 className="type-heading-2">Structured Foundation Built For High Contrast</h2>
           </div>
 
           <div>
             <div className="type-eyebrow" style={{ marginBottom: 'var(--space-2)' }}>Heading 3 (Plus Jakarta Sans 600 / 24px)</div>
-            <h3 className="type-heading-3">Relational Systems &amp; Distributed Automation</h3>
+            <h3 className="type-heading-3">Architectural Layouts &amp; System Primitives</h3>
           </div>
 
           <div>
             <div className="type-eyebrow" style={{ marginBottom: 'var(--space-2)' }}>Heading 4 (Plus Jakarta Sans 600 / 20px)</div>
-            <h4 className="type-heading-4">Modular Component Primitives &amp; Tokens</h4>
+            <h4 className="type-heading-4">Modular Component Tokens &amp; Surface Depths</h4>
           </div>
 
           <hr className="divider" style={{ margin: 0 }} />
@@ -205,7 +205,7 @@ export const TokenVisualizer: React.FC = () => {
           <div>
             <div className="type-eyebrow" style={{ marginBottom: 'var(--space-2)' }}>Body Large (Plus Jakarta Sans 400 / 18px)</div>
             <p className="type-body-lg">
-              Subhashish is an Integrated CSE student focusing on high-reliability software, containerized microservices, and AI-driven interactive interfaces.
+              A foundational typography specimen demonstrating high typographic contrast, balanced editorial rhythm, and accessible line measure across all viewports.
             </p>
           </div>
 
