@@ -10,9 +10,11 @@ import { MindsetSection } from './sections/MindsetSection';
 import { ProjectsSection } from './sections/ProjectsSection';
 import { SkillsSection } from './sections/SkillsSection';
 import { useRevealObserver } from './hooks/useRevealObserver';
+import { useParallax } from './hooks/useParallax';
 
 export const App: React.FC = () => {
   useRevealObserver();
+  useParallax();
 
   return (
     <div className="portfolio-app">

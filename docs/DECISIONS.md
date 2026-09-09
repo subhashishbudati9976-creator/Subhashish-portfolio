@@ -143,3 +143,14 @@
 - Phase 6: QA + Deployment
 - ShadowFox Beginner submission follows Phase 6.
 
+---
+
+### 2026-09-10 — Isolated Hero Parallax Engine
+**Decision:** Keep scroll-linked parallax separate from the Phase 3A reveal observer and update explicitly marked hero layers through one centralized `requestAnimationFrame` scheduler.
+
+**Why:** Parallax has different lifecycle, performance, and reduced-motion requirements from one-time content reveals. Centralized transform updates avoid per-component scroll listeners and keep readable content in the normal document flow.
+
+**Tradeoffs:** The first implementation is limited to the hero atmosphere and avatar; more complex cinematic sequences may require a later animation timeline decision.
+
+**Validation:** Desktop and tablet transform ranges, mobile/reduced-motion neutralization, zero horizontal overflow, and browser console health verified locally.
+

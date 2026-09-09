@@ -23,6 +23,11 @@ export const HeroSection: React.FC = () => {
       className="hero-section page-container"
       aria-labelledby="hero-heading"
     >
+      <div
+        className="hero-atmosphere"
+        data-parallax="hero-atmosphere"
+        aria-hidden="true"
+      />
       <div className="hero-inner">
         {/* Left: Content */}
         <div>
@@ -80,6 +85,7 @@ export const HeroSection: React.FC = () => {
         <div
           className="hero-avatar motion-reveal motion-scale-fade"
           data-motion-reveal="scale-fade"
+          data-parallax="hero-avatar"
           role="img"
           aria-label="Subhashish Budati — portrait placeholder, photo coming soon"
         >
