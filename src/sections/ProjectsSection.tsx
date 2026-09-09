@@ -15,7 +15,7 @@ const PROJECTS: ProjectData[] = [
   {
     id: 'ai-chatbot',
     year: '2026',
-    type: 'solo',
+    type: 'academic',
     title: 'Deployment of an AI-Driven Chatbot as a Virtual Assistant Using DevOps',
     summary:
       'An AI-powered virtual assistant developed as academic software, integrating Google Gemini for natural-language conversational responses and deployed using containerisation and CI/CD practices.',
@@ -43,11 +43,7 @@ const PROJECTS: ProjectData[] = [
       'A full-stack platform for monitoring a simulated satellite constellation, detecting conjunction threats, and supporting avoidance decisions — developed as an academic team project.',
     context:
       'High-complexity systems project combining 3D orbital visualisation, orbit propagation, threat detection, and mission analytics workflows.',
-    contributions: [
-      'Participated in building the visualisation, threat-analysis, and mission-management workflows as part of the team.',
-      'Contributed to 3D orbital visualisation and orbit propagation components.',
-      'Worked on conjunction threat detection, alert systems, and mission analytics.',
-    ],
+    contributions: [],
     technologies: ['Full-Stack', 'Orbital Mechanics', '3D Visualisation', 'Data Analytics'],
     github: { label: 'GitHub', href: null },
     live: { label: 'Live Demo', href: null },
@@ -62,11 +58,7 @@ const PROJECTS: ProjectData[] = [
       'A web-based railway reservation and management system featuring train search, passenger management, booking, cancellation, schedules, payments, and administration — built as an academic team project.',
     context:
       'Workflow-oriented full-stack system with relational data management designed for a realistic reservation use case.',
-    contributions: [
-      'Contributed to frontend components, backend services, and relational data-management components as part of the team.',
-      'Worked on core reservation flows: search, booking, and cancellation.',
-      'Contributed to passenger management and scheduling logic.',
-    ],
+    contributions: [],
     technologies: ['HTML', 'CSS', 'SQL', 'SQLite', 'Full-Stack Web'],
     github: { label: 'GitHub', href: null },
     live: { label: 'Live Demo', href: null },

@@ -36,8 +36,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="project-header">
         <div className="project-meta">
           <span className="project-year">{year}</span>
-          <Badge variant={type === 'solo' ? 'blue' : 'default'}>
-            {type === 'solo' ? 'SOLO' : 'TEAM PROJECT'}
+          <Badge variant={type === 'academic' ? 'blue' : 'default'}>
+            {type === 'academic' ? 'ACADEMIC PROJECT' : 'TEAM PROJECT'}
           </Badge>
           {featured && <Badge variant="violet">FEATURED</Badge>}
         </div>

@@ -24,6 +24,9 @@ const EMPTY_ERRORS: ContactFormErrors = {};
 
 /* Validation rules */
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_NAME = 80;
+const MAX_EMAIL = 254;
+const MAX_SUBJECT = 120;
 const MAX_MESSAGE = 2000;
 
 function validate(data: ContactFormData): ContactFormErrors {
@@ -33,10 +36,14 @@ function validate(data: ContactFormData): ContactFormErrors {
     errors.name = 'Name is required.';
   } else if (data.name.trim().length < 2) {
     errors.name = 'Name must be at least 2 characters.';
+  } else if (data.name.trim().length > MAX_NAME) {
+    errors.name = `Name must be under ${MAX_NAME} characters.`;
   }
 
   if (!data.email.trim()) {
     errors.email = 'Email address is required.';
+  } else if (data.email.trim().length > MAX_EMAIL) {
+    errors.email = `Email address must be under ${MAX_EMAIL} characters.`;
   } else if (!EMAIL_RE.test(data.email.trim())) {
     errors.email = 'Please enter a valid email address.';
   }
@@ -45,6 +52,8 @@ function validate(data: ContactFormData): ContactFormErrors {
     errors.subject = 'Subject is required.';
   } else if (data.subject.trim().length < 3) {
     errors.subject = 'Subject must be at least 3 characters.';
+  } else if (data.subject.trim().length > MAX_SUBJECT) {
+    errors.subject = `Subject must be under ${MAX_SUBJECT} characters.`;
   }
 
   if (!data.message.trim()) {

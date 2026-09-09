@@ -52,15 +52,18 @@ export const Nav: React.FC = () => {
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       e.preventDefault();
       setMobileOpen(false);
+      if (mobileOpen) {
+        hamburgerRef.current?.focus();
+      }
       const target = document.querySelector(href);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     },
-    []
+    [mobileOpen]
   );
 
-  /* Trap focus in mobile overlay; close on Escape */
+  /* Return focus to the menu trigger when the mobile menu closes. */
   useEffect(() => {
     if (!mobileOpen) return;
 

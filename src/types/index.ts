@@ -7,7 +7,7 @@
    Project
    ========================================================================== */
 
-export type ProjectType = 'solo' | 'team';
+export type ProjectType = 'academic' | 'team';
 
 export interface ProjectLink {
   label: string;
