@@ -82,7 +82,8 @@ export const ProjectsSection: React.FC = () => {
         <h2 className="section-title" id="projects-heading">
           <StaggeredText
             text="Things I've Built"
-            delay={70}
+            delay={150}
+            duration={1000}
           />
         </h2>
         <p

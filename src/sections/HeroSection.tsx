@@ -85,6 +85,7 @@ export const HeroSection: React.FC = () => {
             <Button
               variant="primary"
               size="lg"
+              magnetic
               onClick={() => scrollTo('projects')}
               id="hero-cta-work"
             >
@@ -93,6 +94,7 @@ export const HeroSection: React.FC = () => {
             <Button
               variant="secondary"
               size="lg"
+              magnetic
               onClick={() => scrollTo('contact')}
               id="hero-cta-contact"
             >

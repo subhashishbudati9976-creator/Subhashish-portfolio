@@ -811,6 +811,19 @@
     transform var(--duration-base) var(--ease-out);
 }
 
+/* Project card entrance rhythm */
+.projects-list .project-card:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.projects-list .project-card:nth-child(2) {
+  transition-delay: 120ms;
+}
+
+.projects-list .project-card:nth-child(3) {
+  transition-delay: 240ms;
+}
+
 /* Cursor-following atmospheric glow */
 .project-card::before {
   content: '';
@@ -1442,6 +1455,37 @@
   .staggered-text-word.is-visible {
     opacity: 1;
     filter: none;
+    transform: none;
+    transition: none;
+  }
+}
+
+.btn-magnetic {
+  --magnetic-x: 0px;
+  --magnetic-y: 0px;
+
+  transform: translate3d(
+    var(--magnetic-x),
+    var(--magnetic-y),
+    0
+  );
+
+  transition:
+    transform 180ms var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .btn-magnetic {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-magnetic {
     transform: none;
     transition: none;
   }
