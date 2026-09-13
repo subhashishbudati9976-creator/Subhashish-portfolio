@@ -11,6 +11,7 @@
 import React from 'react';
 import { Button } from '../components/Button';
 import { Badge } from '../components/Badge';
+import Aurora from '../components/effects/Aurora';
 
 export const HeroSection: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -23,6 +24,14 @@ export const HeroSection: React.FC = () => {
       className="hero-section page-container"
       aria-labelledby="hero-heading"
     >
+      <div className="hero-aurora">
+        <Aurora
+          colorStops={['#24104a', '#8b4dcc', '#101c45']}
+          amplitude={1.2}
+          blend={0.85}
+          speed={0.35}
+        />
+      </div>
       <div
         className="hero-atmosphere"
         data-parallax="hero-atmosphere"

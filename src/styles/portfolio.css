@@ -175,6 +175,19 @@
   background-repeat: no-repeat;
 }
 
+.hero-aurora {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.65;
+}
+
 .hero-avatar[data-parallax] {
   pointer-events: none;
 }
