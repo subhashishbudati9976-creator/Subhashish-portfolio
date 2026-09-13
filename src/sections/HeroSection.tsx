@@ -12,6 +12,7 @@ import React from 'react';
 import { Button } from '../components/Button';
 import { Badge } from '../components/Badge';
 import Aurora from '../components/effects/Aurora';
+import BlurText from '../components/effects/BlurText';
 
 export const HeroSection: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -52,10 +53,20 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Display heading */}
-          <h1 className="hero-display motion-reveal" data-motion-reveal="fade-up" id="hero-heading">
-            Hey amigos —<br />
+          <h1
+            className="hero-display motion-reveal"
+            data-motion-reveal="fade-up"
+            id="hero-heading"
+          >
+            <BlurText text="Hey amigos —" />
+            <br />
             I&apos;m{' '}
-            <span className="hero-name-accent">Subhashish.</span>
+            <span className="hero-name-accent">
+              <BlurText
+              text="Subhashish."
+              delay={65}
+              />
+            </span>
           </h1>
 
           {/* Subtitle */}

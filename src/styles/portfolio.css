@@ -1375,3 +1375,37 @@
   background: var(--border-hairline);
   margin: 0;
 }
+
+.blur-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.blur-text-letter {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(10px);
+  will-change: opacity, filter, transform;
+
+  transition:
+    opacity 600ms var(--ease-out),
+    filter 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+}
+
+.blur-text-letter.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blur-text-letter,
+  .blur-text-letter.is-visible {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}
