@@ -32,6 +32,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       className={`project-card motion-reveal${featured ? ' featured' : ''}`}
       data-motion-reveal="fade-up"
       aria-label={`Project: ${title}`}
+      onPointerMove={handlePointerMove}
     >
       {/* Header row */}
       <div className="project-header">

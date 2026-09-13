@@ -783,32 +783,89 @@
 
 .project-card {
   position: relative;
+  overflow: hidden;
+
   background: var(--surface-raised);
   border: 1px solid var(--border-subtle);
   border-top-color: var(--border-top-light);
   border-radius: var(--radius-md);
   padding: var(--space-8);
-  box-shadow: var(--shadow-sm), var(--glow-rim-top);
+
+  box-shadow:
+    var(--shadow-sm),
+    var(--glow-rim-top);
+
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+
   transition:
     border-color var(--duration-base) var(--ease-out),
     box-shadow var(--duration-base) var(--ease-out),
     transform var(--duration-base) var(--ease-out);
 }
 
+/* Cursor-following atmospheric glow */
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      420px circle at var(--spotlight-x) var(--spotlight-y),
+      rgba(91, 173, 236, 0.10),
+      transparent 62%
+    );
+
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+/* Very subtle inner rim */
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.025);
+}
+
 .project-card:hover {
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-md), var(--glow-blue-xs), var(--glow-rim-top);
+
+  box-shadow:
+    var(--shadow-md),
+    var(--glow-blue-xs),
+    var(--glow-rim-top);
+
   transform: translateY(var(--motion-lift-y));
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-card.featured {
   border-color: rgba(91, 173, 236, 0.28);
-  box-shadow: var(--shadow-md), var(--glow-blue-sm), var(--glow-rim-top);
+
+  box-shadow:
+    var(--shadow-md),
+    var(--glow-blue-sm),
+    var(--glow-rim-top);
 }
 
 .project-card.featured:hover {
   border-color: rgba(91, 173, 236, 0.55);
-  box-shadow: var(--shadow-lg), var(--glow-blue-md), var(--glow-rim-top);
+
+  box-shadow:
+    var(--shadow-lg),
+    var(--glow-blue-md),
+    var(--glow-rim-top);
+
+  transform: translateY(var(--motion-lift-y));
 }
 
 .project-header {
