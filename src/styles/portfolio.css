@@ -159,8 +159,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
-  padding-top: var(--space-24); /* clear fixed nav */
+  overflow: visible;
+  padding-top: var(--space-24);
 }
 
 .hero-atmosphere {

@@ -139,3 +139,17 @@ const ExternalIcon: React.FC = () => (
     <line x1="10" y1="14" x2="21" y2="3" />
   </svg>
 );
+
+const handlePointerMove = (event: React.PointerEvent<HTMLElement>) => {
+  const rect = event.currentTarget.getBoundingClientRect();
+
+  event.currentTarget.style.setProperty(
+    '--spotlight-x',
+    `${event.clientX - rect.left}px`
+  );
+
+  event.currentTarget.style.setProperty(
+    '--spotlight-y',
+    `${event.clientY - rect.top}px`
+  );
+};

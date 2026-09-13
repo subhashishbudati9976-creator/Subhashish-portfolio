@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
           colorStops={['#24104a', '#8b4dcc', '#101c45']}
           amplitude={1.2}
           blend={0.85}
-          speed={0.35}
+          speed={1.2}
         />
       </div>
       <div

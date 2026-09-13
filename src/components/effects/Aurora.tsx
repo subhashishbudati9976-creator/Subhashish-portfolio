@@ -132,7 +132,7 @@ void main() {
 
   float intensity = 0.6 * height;
 
-  float midPoint = 0.20;
+  float midPoint = 0.02;
 
   float auroraAlpha = smoothstep(
     midPoint - uBlend * 0.5,
