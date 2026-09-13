@@ -220,12 +220,19 @@
 }
 
 .hero-name-accent {
+  color: var(--color-text-primary);
+}
+
+/* Gradient belongs to the animated letters,
+   not the parent wrapper. */
+.hero-name-accent .blur-text-letter {
   background: linear-gradient(
     110deg,
     var(--color-text-primary) 0%,
     var(--color-accent-blue) 55%,
     var(--color-accent-violet) 100%
   );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1403,6 +1410,36 @@
 @media (prefers-reduced-motion: reduce) {
   .blur-text-letter,
   .blur-text-letter.is-visible {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}
+
+.staggered-text {
+  display: inline;
+}
+
+.staggered-text-word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(14px);
+
+  transition-property: opacity, filter, transform;
+  transition-timing-function: var(--ease-out);
+}
+
+.staggered-text-word.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .staggered-text-word,
+  .staggered-text-word.is-visible {
     opacity: 1;
     filter: none;
     transform: none;

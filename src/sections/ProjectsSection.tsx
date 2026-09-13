@@ -7,6 +7,7 @@
  * ODA-CMS and Railway Reservation are clearly marked as team projects.
  */
 
+import StaggeredText from '../components/effects/StaggeredText';
 import React from 'react';
 import { ProjectCard } from '../components/ProjectCard';
 import type { ProjectData } from '../types';
@@ -79,7 +80,10 @@ export const ProjectsSection: React.FC = () => {
           <span className="type-eyebrow">Selected Work</span>
         </div>
         <h2 className="section-title" id="projects-heading">
-          Things I&apos;ve Built
+          <StaggeredText
+            text="Things I've Built"
+            delay={70}
+          />
         </h2>
         <p
           className="type-body"
