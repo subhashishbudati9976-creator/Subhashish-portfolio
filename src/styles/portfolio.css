@@ -1845,3 +1845,297 @@
     transition: none;
   }
 }
+
+/* ==========================================================================
+   ShadowFox Cinematic Experience
+   ========================================================================== */
+
+.hero-experience {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #050508;
+
+  overflow: hidden;
+}
+
+.hero-experience-video {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  background: #050508;
+}
+
+.hero-experience-overlay {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 35%,
+      rgba(0, 0, 0, 0.32) 100%
+    );
+}
+
+.hero-experience-status {
+  position: absolute;
+  left: var(--space-6);
+  bottom: var(--space-6);
+
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  pointer-events: none;
+}
+
+.hero-experience-skip {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+
+  pointer-events: auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-sm);
+
+  padding: 0.45rem 0.8rem;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(10px);
+
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    transform 180ms var(--ease-out);
+}
+
+.hero-experience-skip:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+
+  color: #ffffff;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  transform: translateY(-2px);
+}
+
+.hero-experience-skip:active {
+  transform: translateY(0);
+}
+
+.hero-experience-error {
+  pointer-events: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: var(--space-4);
+
+  text-align: center;
+
+  padding: var(--space-8);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+
+  background: rgba(10, 10, 16, 0.82);
+
+  backdrop-filter: blur(16px);
+
+  box-shadow: var(--shadow-lg);
+
+  color: var(--color-text-primary);
+}
+
+.hero-experience-action {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+
+  padding: 0.5rem 0.9rem;
+
+  background: var(--surface-raised);
+
+  color: var(--color-text-primary);
+
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    transform 180ms var(--ease-out);
+}
+
+.hero-experience-action:hover {
+  border-color: var(--color-accent-blue);
+  color: var(--color-accent-blue);
+  transform: translateY(-2px);
+}
+
+.hero-experience-action:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .hero-experience-video {
+    object-fit: cover;
+  }
+
+  .hero-experience-skip {
+    top: var(--space-4);
+    right: var(--space-4);
+  }
+
+  .hero-experience-status {
+    left: var(--space-4);
+    bottom: var(--space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-experience-skip,
+  .hero-experience-action {
+    transition: none;
+  }
+
+  .hero-experience-skip:hover,
+  .hero-experience-skip:active,
+  .hero-experience-action:hover,
+  .hero-experience-action:active {
+    transform: none;
+  }
+}
+
+/* Cinematic trigger */
+
+.hero-experience-trigger-wrap {
+  margin-top: var(--space-5);
+}
+
+.hero-experience-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  border-radius: var(--radius-sm);
+
+  padding: 0.6rem 0.9rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.08),
+      rgba(91, 173, 236, 0.04)
+    );
+
+  color: var(--color-text-secondary);
+
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    transform 180ms var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.hero-experience-trigger:hover {
+  border-color: rgba(139, 92, 246, 0.55);
+
+  color: var(--color-text-primary);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.13),
+      rgba(91, 173, 236, 0.07)
+    );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.18),
+    0 0 22px rgba(139, 92, 246, 0.08);
+}
+
+.hero-experience-trigger:active {
+  transform: translateY(0);
+}
+
+.hero-experience-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.hero-experience-trigger-icon {
+  color: var(--color-accent-violet);
+  font-size: 0.9rem;
+}
+
+.hero-experience-trigger-text {
+  white-space: nowrap;
+}
+
+.hero-experience-trigger-arrow {
+  color: var(--color-accent-blue);
+  transition: transform 180ms var(--ease-out);
+}
+
+.hero-experience-trigger:hover .hero-experience-trigger-arrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-experience-trigger,
+  .hero-experience-trigger-arrow {
+    transition: none;
+  }
+
+  .hero-experience-trigger:hover,
+  .hero-experience-trigger:active,
+  .hero-experience-trigger:hover .hero-experience-trigger-arrow {
+    transform: none;
+  }
+}
