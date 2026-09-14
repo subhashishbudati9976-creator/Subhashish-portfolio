@@ -102,9 +102,19 @@ export const SkillsSection: React.FC = () => {
       </div>
 
       {/* Primary skills grid */}
-      <div className="skills-grid motion-reveal" data-motion-reveal="fade-up" style={{ marginBottom: 'var(--space-10)' }}>
-        {PRIMARY_CATEGORIES.map(category => (
-          <div key={category.id} className="surface-card">
+      <div
+  className="skills-grid"
+  style={{ marginBottom: 'var(--space-10)' }}
+>
+  {PRIMARY_CATEGORIES.map((category, index) => (
+    <div
+      key={category.id}
+      className="surface-card motion-reveal"
+      data-motion-reveal="fade-up"
+      style={{
+        '--motion-reveal-delay': `${index * 100}ms`,
+      } as React.CSSProperties}
+    >
             <h3 className="skills-category-title">{category.label}</h3>
             <div className="skills-chip-row">
               {category.skills.map(skill => (

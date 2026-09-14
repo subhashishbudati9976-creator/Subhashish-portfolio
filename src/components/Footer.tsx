@@ -7,6 +7,13 @@ const FOOTER_LINKS = [
 ];
 
 export const Footer: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className="portfolio-footer">
       <div className="page-container footer-inner">
@@ -23,12 +30,21 @@ export const Footer: React.FC = () => {
               {link.label}
             </a>
           ))}
+
           <a
             className="footer-link"
             href="mailto:subhashishbudati9976@gmail.com"
           >
             Email
           </a>
+
+          <button
+            type="button"
+            className="footer-top-link"
+            onClick={scrollToTop}
+          >
+            Top ↑
+          </button>
         </nav>
 
         <div className="footer-phase-note">

@@ -77,7 +77,14 @@ export const ExperienceSection: React.FC = () => {
               item.type === 'Education' ? 'violet' : '';
 
             return (
-              <li key={item.id} className="timeline-item motion-reveal" data-motion-reveal="fade-up">
+              <li
+  key={item.id}
+  className="timeline-item motion-reveal"
+  data-motion-reveal="fade-up"
+  style={{
+    '--motion-reveal-delay': `${EXPERIENCE.indexOf(item) * 140}ms`,
+  } as React.CSSProperties}
+>
                 <div
                   className={`timeline-dot${dotVariant ? ` ${dotVariant}` : ''}`}
                   aria-hidden="true"

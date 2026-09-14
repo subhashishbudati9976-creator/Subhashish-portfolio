@@ -17,11 +17,13 @@ export function useRevealObserver() {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-
           const element = entry.target as HTMLElement;
-          element.classList.add('motion-visible');
-          observer.unobserve(element);
+
+          if (entry.isIntersecting) {
+            element.classList.add('motion-visible');
+          } else {
+            element.classList.remove('motion-visible');
+          }
         });
       },
       { rootMargin: '0px 0px -10% 0px', threshold: 0.08 }
